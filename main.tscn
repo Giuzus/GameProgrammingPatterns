@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://camt1rne0n8of"]
+
+[ext_resource type="Script" path="res://main.cs" id="1_ew6ae"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ew6ae")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 161.0
+offset_top = 25.0
+offset_right = 1000.0
+offset_bottom = 128.0
+text = "Command"
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
