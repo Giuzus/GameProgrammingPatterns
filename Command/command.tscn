@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://5d1rid3o2ktx"]
+[gd_scene load_steps=5 format=3 uid="uid://5d1rid3o2ktx"]
 
 [ext_resource type="Script" path="res://Command/Command.cs" id="1_o8ts1"]
+[ext_resource type="PackedScene" uid="uid://chbmyoba3inwa" path="res://back.tscn" id="2_ft4gy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wv0nb"]
 size = Vector2(40, 648)
@@ -67,6 +68,8 @@ offset_bottom = 40.0
 
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2(585, 174)
+
+[node name="Back" parent="." instance=ExtResource("2_ft4gy")]
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="OnItemSelected"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="OnButtonPressed"]

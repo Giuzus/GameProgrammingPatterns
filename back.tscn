@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://chbmyoba3inwa"]
+
+[ext_resource type="Script" path="res://back.cs" id="1_b71ws"]
+
+[node name="Back" type="Node2D"]
+script = ExtResource("1_b71ws")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1047.0
+offset_top = 23.0
+offset_right = 1092.0
+offset_bottom = 54.0
+text = "Back
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="OnButtonPressed"]

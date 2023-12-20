@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://c43njdl146lav"]
+
+[ext_resource type="PackedScene" uid="uid://chbmyoba3inwa" path="res://back.tscn" id="1_t78a8"]
+[ext_resource type="Script" path="res://State/Character.cs" id="2_b4sox"]
+[ext_resource type="Texture2D" uid="uid://dx06ildull4dp" path="res://State/Character.png" id="2_saawp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu6xe"]
+size = Vector2(40, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rug"]
+size = Vector2(39, 646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7811"]
+size = Vector2(1152, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdh0h"]
+size = Vector2(161, 165)
+
+[node name="State" type="Node2D"]
+
+[node name="Back" parent="." instance=ExtResource("1_t78a8")]
+metadata/_edit_lock_ = true
+
+[node name="Map" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Map"]
+offset_right = 40.0
+offset_bottom = 648.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Panel/StaticBody2D"]
+visible = false
+position = Vector2(20, 323.5)
+shape = SubResource("RectangleShape2D_iu6xe")
+
+[node name="Panel2" type="Panel" parent="Map"]
+offset_left = 1112.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Panel2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Panel2/StaticBody2D"]
+visible = false
+position = Vector2(19.5, 323)
+shape = SubResource("RectangleShape2D_k8rug")
+
+[node name="Panel3" type="Panel" parent="Map"]
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Panel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Panel3/StaticBody2D"]
+visible = false
+position = Vector2(576, 20)
+shape = SubResource("RectangleShape2D_i7811")
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(403, 437)
+script = ExtResource("2_b4sox")
+metadata/_edit_group_ = true
+
+[node name="Character Texture" type="Sprite2D" parent="Character"]
+texture = ExtResource("2_saawp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+visible = false
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_fdh0h")
